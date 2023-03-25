@@ -1,0 +1,3 @@
+Klienci robiący zakupy (bez ograniczeń wiekowych).
+Pracownicy sklepu (pomoc klientom w momencie awarii oraz sytuacjach wymagających dodatkowej akceptacji).
+Serwisanci (serwis oraz instalacja urządzeń).

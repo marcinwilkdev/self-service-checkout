@@ -1,0 +1,2 @@
+Skanuje kody kreskowe produktów lub waży produkty bez kodów,
+oblicza ich cenę oraz pozwala zapłacić za całe zakupy.

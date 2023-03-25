@@ -1,0 +1,9 @@
+Skanowanie produktów - przy pomocy wbudowanego skanera kodów kreskowych.
+Ważenie produktów - przy pomocy wbudowanej wagi.
+Obliczanie kosztu zakupów - wbudowany komputer mający dostęp do cen pojedynczych produktów.
+Płacenie za zakupy - terminal płatniczy do płatności kartą.
+
+Antykradzieżowe zabezpiecznie - waga na skanowane produkty nie zezwalająca na dalsze skanowanie w momencie wykrycia niezgodności.
+
+// Dodatkowe ograniczenia prawne
+Akceptowanie dodatkowych ograniczeń - system posiadający informacje o pracownikach + karta + skaner kodów kreskowych.
