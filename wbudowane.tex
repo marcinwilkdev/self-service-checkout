@@ -34,6 +34,194 @@
         \item Dostęp do interfejsu serwisanta jedynie upoważnionym osobom.
         \item Kontrolowanie sprzedaży produktów z ograniczeniami wiekowymi.
     \end{itemize}
-\section{Specyfikacja}
-
+\section{Przypadki użycia}
+\begin{center}
+\end{center}
+\subsection{Skanowanie produktów}
+\begin{enumerate}
+\item \textbf{Nazwa przypadku użycia}: Skanowanie produktów
+\item \textbf{Priorytet}: Wysoki
+\item \textbf{Aktor podstawowy}: Użytkownik
+\item \textbf{Typ opisu}: Mało detali
+\item \textbf{Udziałowcy i cele}:
+\begin{itemize}
+\item Użytkownik: Chce kupić produkty i zapłacić za nie.
+\end{itemize}
+\item \textbf{Typ wyzwalacza}: Użytkownik zaczyna skanowanie produktów.
+\item \textbf{Powiązania}: Przypadek użycia jest powiązany z wprowadzaniem kodów rabatowych.
+\item \textbf{Asocjacja}: Brak asocjacji z innymi przypadkami użycia.
+\item \textbf{Zawieranie}: Brak zawierania.
+\item \textbf{Rozszerzenie}: Brak rozszerzenia.
+\item \textbf{Generalizacja}: Brak generalizacji.
+\item \textbf{Zwykły przepływ zdarzeń}:
+\begin{enumerate}
+\item Użytkownik zaczyna skanowanie produktów.
+\item Kasa samoobsługowa skanuje produkty i wyświetla ich ceny.
+\item Kasa samoobsługowa aktualizuje cenę koszyka.
+\item Użytkownik odkłada produkt do strefy pakowania.
+\item Użytkownik kontynuuje skanowanie produktów lub przechodzi do wprowadzenia kodów rabatowych lub płatności.
+\end{enumerate}
+\item \textbf{Przepływy poboczne}:
+\begin{enumerate}
+\item Produkt wymaga zatwierdzenia wiekowego.
+\item Uruchamia się przypadek użycia zatwierdzenia wieku przez pracownika.
+\end{enumerate}
+\item \textbf{Przepływy alternatywne}:
+\begin{enumerate}
+\item Waga produktów w strefie pakowania nie zgadza się.
+\item Uruchamia się przypadek użycia sprawdzenia wagi przez pracownika.
+\end{enumerate}
+\end{enumerate}
+\subsection{Ważenie produktu}
+\begin{enumerate}
+\item \textbf{Nazwa przypadku użycia}: Ważenie Produktu
+\item \textbf{Priorytet}: Średni
+\item \textbf{Aktor podstawowy}: Użytkownik
+\item \textbf{Typ opisu}: Mało detali
+\item \textbf{Udziałowcy i cele}:
+\begin{itemize}
+\item Użytkownik: Chce zważyć produkt, którego waga nie została określona.
+\end{itemize}
+\item \textbf{Typ wyzwalacza}: Użytkownik wybiera opcję ważenia produktu na ekranie kasy samoobsługowej.
+\item \textbf{Powiązania}: Przypadek użycia jest powiązany z skanowaniem produktów, ponieważ może być wywołany w trakcie skanowania produktów, gdy waga produktu nie została określona.
+\item \textbf{Zawieranie}: Brak zawierania.
+\item \textbf{Asocjacja}: Brak asocjacji z innymi przypadkami użycia.
+\item \textbf{Rozszerzenie}: Brak rozszerzenia.
+\item \textbf{Generalizacja}: Brak generalizacji.
+\item \textbf{Zwykły przepływ zdarzeń}:
+\begin{enumerate}
+\item Użytkownik wybiera opcję ważenia produktu na ekranie kasy samoobsługowej.
+\item Kasa samoobsługowa wyświetla komunikat proszący użytkownika o umieszczenie produktu na wadze.
+\item Użytkownik umieszcza produkt na wadze.
+\item Kasa samoobsługowa wyświetla wagę produktu na ekranie.
+\item Kasa samoobsługowa aktualizuje cenę koszyka.
+\item Użytkownik odkłada produkt do strefy pakowania.
+\item Użytkownik kontynuuje skanowanie produktów.
+\end{enumerate}
+\item \textbf{Przepływy poboczne}:
+\begin{enumerate}
+\item Waga produktu nie jest prawidłowa.
+\item Kasa samoobsługowa wyświetla komunikat o błędnej wadze i prosi użytkownika o ponowne umieszczenie produktu na wadze.
+\end{enumerate}
+\item \textbf{Przepływy alternatywne}:
+\begin{enumerate}
+\item Waga produktów w strefie pakowania nie zgadza się.
+\item Uruchamia się przypadek użycia sprawdzenia wagi przez pracownika.
+\end{enumerate}
+\end{enumerate}
+\subsection{Wprowadź kod rabatowy}
+\begin{enumerate}
+\item \textbf{Priorytet}: Średni
+\item \textbf{Aktor podstawowy}: Użytkownik
+\item \textbf{Typ opisu}: Mało detali
+\item \textbf{Udziałowcy i cele}:
+\begin{itemize}
+\item Użytkownik: Chce zastosować kod rabatowy do swojego zamówienia.
+\end{itemize}
+\item \textbf{Typ wyzwalacza}: Użytkownik wprowadza kod rabatowy.
+\item \textbf{Powiązania}: Przypadek użycia jest powiązany z zeskanowaniem produktów i wyborem sposobu płatności.
+\item \textbf{Asocjacja}: Brak asocjacji z innymi przypadkami użycia.
+\item \textbf{Zawieranie}: Brak zawierania.
+\item \textbf{Rozszerzenie}: Brak rozszerzenia.
+\item \textbf{Generalizacja}: Brak generalizacji.
+\item \textbf{Zwykły przepływ zdarzeń}:
+\begin{enumerate}
+\item Użytkownik wybiera opcję wprowadzenia kodu rabatowego na ekranie kasy samoobsługowej.
+\item Użytkownik wprowadza kod rabatowy.
+\item Kasa samoobsługowa sprawdza poprawność kodu rabatowego i wyświetla nowe ceny produktów.
+\item Użytkownik kontynuuje skanowanie produktów lub przechodzi do wprowadzenia płatności.
+\end{enumerate}
+\item \textbf{Przepływy poboczne}:
+\begin{enumerate}
+\item Użytkownik wprowadza niepoprawny kod rabatowy.
+\item Kasa samoobsługowa wyświetla komunikat o błędnym kodzie rabatowym i prosi użytkownika o wprowadzenie poprawnego kodu.
+\end{enumerate}
+\item \textbf{Przepływy alternatywne}: Brak przepływów alternatywnych.
+\end{enumerate}
+\subsection{Dokonaj płatności}
+\begin{enumerate}
+\item \textbf{Nazwa przypadku użycia}: Dokonaj płatności
+\item \textbf{Priorytet}: Wysoki
+\item \textbf{Aktor podstawowy}: Użytkownik
+\item \textbf{Typ opisu}: Mało detali
+\item \textbf{Udziałowcy i cele}:
+\begin{itemize}
+\item Użytkownik: Chce zapłacić za swoje produkty i zakończyć transakcję.
+\end{itemize}
+\item \textbf{Typ wyzwalacza}: Użytkownik wybiera opcję płatności na ekranie kasy samoobsługowej.
+\item \textbf{Powiązania}: Przypadek użycia jest powiązany z zeskanowaniem produktów i wprowadzeniem kodów rabatowych.
+\item \textbf{Asocjacja}: Brak asocjacji z innymi przypadkami użycia.
+\item \textbf{Zawieranie}: Brak zawierania.
+\item \textbf{Rozszerzenie}: Brak rozszerzenia.
+\item \textbf{Generalizacja}: Brak generalizacji.
+\item \textbf{Zwykły przepływ zdarzeń}:
+\begin{enumerate}
+\item Użytkownik wybiera opcję płatności na ekranie kasy samoobsługowej.
+\item Użytkownik wprowadza metodę płatności, np. kartę kredytową lub gotówkę.
+\item Kasa samoobsługowa przetwarza płatność i wydaje paragon.
+\item Użytkownik odbiera paragon i kończy transakcję.
+\end{enumerate}
+\item \textbf{Przepływy poboczne}:
+Brak przepływów pobocznych
+\item \textbf{Przepływy alternatywne}:
+\begin{enumerate}
+    \item Brak środków na koncie 
+    \item Urządzenie wyświetla komunikat o braku środków na koncie
+\end{enumerate}
+\end{enumerate}
+\subsection{Zatwierdzenie wieku}
+\begin{enumerate}
+\item \textbf{Priorytet}: Wysoki
+\item \textbf{Aktor podstawowy}: Pracownik
+\item \textbf{Typ opisu}: Dużo
+\item \textbf{Udziałowcy i cele}:
+\begin{itemize}
+\item \textbf{Pracownik}: potwierdzenie, że klient ma wystarczający wiek, aby zakupić produkt o ograniczeniach wiekowych.
+\item \textbf{Klient}: zakup produktu o ograniczeniach wiekowych.
+\end{itemize}
+\item \textbf{Typ wyzwalacza}: Pracownik zauważa, że klient chce kupić produkt o ograniczeniach wiekowych.
+\item \textbf{Powiązania}: Brak powiązań
+\item \textbf{Asocjacja}: Związany jest z przypadkami użycia skanowanie oraz ważenie produktów, ponieważ bez zatwierdzenia wieku przez pracownika klient nie może zakupić produktu o ograniczeniach wiekowych.
+\item \textbf{Zawieranie}: Brak zawierania.
+\item \textbf{Rozszerzenie}: Brak
+\item \textbf{Generalizacja}: Brak
+\item \textbf{Zwykły przepływ zdarzeń}:
+\begin{enumerate}
+\item Klient składa zamówienie i skanuje produkt o ograniczeniach wiekowych.
+\item Kasa samoobsługowa wyświetla komunikat o konieczności zatwierdzenia wieku przez pracownika.
+\item Pracownik odblokowuje kiosk, wpisując swoje dane uwierzytelniające lub skanując swój identyfikator pracownika.
+\item Kasa samoobsługowa wyświetla informację o ograniczeniach wiekowych dla produktu oraz pyta pracownika, czy klient ma wystarczający wiek, aby zakupić ten produkt.
+\item Pracownik potwierdza, że klient ma wystarczający wiek i wpisuje swój kod lub skanuje swój identyfikator pracownika.
+\item Kasa samoobsługowa zatwierdza zakup.
+\end{enumerate}
+\item \textbf{Przepływy poboczne}:
+\begin{itemize}
+\item Pracownik potwierdza, że klient nie ma wystarczającego wieku, aby zakupić produkt. Kasa samoobsługowa anuluje transakcję i wyświetla komunikat o niedozwolonym zakupie.
+\end{itemize}
+\end{enumerate}
+\subsection{Zatwierdzenie nieprawidłowej wagi}
+\begin{enumerate}
+\item \textbf{Priorytet}: wysoki
+\item \textbf{Aktor podstawowy}: pracownik
+\item \textbf{Typ opisu}: dużo detali
+\item \textbf{Udziałowcy i cele}: Pracownik - zatwierdzenie nieprawidłowej wagi produktu.
+\item \textbf{Typ wyzwalacza}: Pracownik otrzymuje komunikat o nieprawidłowej wadze produktu z systemu samoobsługowego.
+\item \textbf{Powiązania}: Ten przypadek użycia jest powiązany z przypadkiem użycia Skanowania Produktu i Ważenie Produktu.
+\item \textbf{Asocjacja}: Ten przypadek użycia jest połączony z przypadkiem użycia Skanowania Produktu i Ważenie Produktu.
+\item \textbf{Zawieranie}: Brak zawierania.
+\item \textbf{Rozszerzenie}: Brak rozszerzeń
+\item \textbf{Generalizacja}: Nie ma generalizacji dla tego przypadku użycia.
+\item \textbf{Zwykły przepływ zdarzeń}:
+\begin{enumerate}
+\item Pracownik strefy pakowania otrzymuje komunikat o nieprawidłowej wadze produktu z systemu samoobsługowego.
+\item Pracownik strefy pakowania weryfikuje wagę produktu i porównuje ją z wagą wyświetloną na kasie samoobsługowej.
+\item Jeśli waga produktu jest nieprawidłowa, pracownik strefy pakowania wprowadza właściwą wagę produktu do systemu samoobsługowego.
+\item System samoobsługowy zatwierdza nową wagę produktu i kontynuuje proces pakowania.
+\end{enumerate}
+\item \textbf{Przepływy poboczne}:
+\begin{itemize}
+\item Jeśli pracownik strefy pakowania nie może zweryfikować wagi produktu, to może skonsultować się z innym pracownikiem lub poprosić o zastosowanie innej metody weryfikacji wagi produktu.
+\item Jeśli produkt jest uszkodzony lub niekompletny, pracownik strefy pakowania może zgłosić ten fakt do systemu samoobsługowego i przekazać go do magazynu.
+\end{itemize}
+\end{enumerate}
 \end{document}
